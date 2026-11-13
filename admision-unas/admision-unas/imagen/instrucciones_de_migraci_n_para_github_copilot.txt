@@ -1,0 +1,136 @@
+================================================================================
+GUÍA DE IMPLEMENTACIÓN Y MIGRACIÓN UI/UX - LANDING PAGE ADMISIÓN UNAS
+Instrucciones estructuradas para ejecutar con GitHub Copilot / Asistentes IA
+================================================================================
+
+1. CONTEXTO Y OBJETIVO DEL PROYECTO
+--------------------------------------------------------------------------------
+Migrar y construir la Landing Page de Admisión de la Universidad Nacional Agraria
+de la Selva (UNAS - Tingo María), fusionando una arquitectura visual editorial y
+orgánica (inspirada en layouts limpios con máscaras circulares y tarjetas con
+sombra difusa) con componentes funcionales centrados en el postulante (buscador
+de carreras, explorador de facultades y guía paso a paso).
+
+2. ESTRUCTURA DE CARPETAS Y ACTIVOS RECOMENDADA
+--------------------------------------------------------------------------------
+Organizar el proyecto frontend (HTML/CSS/JS o React/Tailwind) bajo esta estructura:
+
+/public/assets/
+  ├── logos/
+  │   ├── logo-unas-color.svg        (Logo oficial para header blanco)
+  │   └── logo-unas-blanco.svg       (Logo monocromático para footer verde)
+  ├── hero/
+  │   └── estudiantes-hero-mask.png  (Composición PNG transparente con máscaras)
+  ├── icons/
+  │   ├── icon-licenciamiento.svg    (Balanza - trazo 2px)
+  │   ├── icon-becas.svg             (Birrete - trazo 2px)
+  │   ├── icon-vida-univ.svg         (Estudiante - trazo 2px)
+  │   ├── icon-investigacion.svg     (Microscopio - trazo 2px)
+  │   ├── float-cacao.svg            (Elemento flotante decorativo)
+  │   └── float-dron.svg             (Elemento flotante decorativo)
+  └── carreras/
+      ├── agronomia.webp             (1920x1080px, optimizado)
+      ├── ing-ambiental.webp         (1920x1080px, optimizado)
+      ├── biologia.webp              (1920x1080px, optimizado)
+      └── ing-forestal.webp          (1920x1080px, optimizado)
+
+3. TOKENS DE DISEÑO (VARIABLES CSS / TAILWIND CONFIG)
+--------------------------------------------------------------------------------
+Copiar estas variables en el archivo global.css o configurar en tailwind.config.js:
+
+:root {
+  /* Colores Institucionales UNAS */
+  --unas-green-primary: #006837;
+  --unas-green-dark: #004d29;
+  --unas-lime-accent: #8cc63f;
+  --unas-lime-hover: #7ab332;
+  --unas-gold-accent: #fbb03b;
+
+  /* Fondos y Superficies */
+  --bg-page: #ffffff;
+  --bg-mint-soft: #eaf6ee;
+  --bg-surface-alt: #f4f7f5;
+
+  /* Tipografía y Textos */
+  --text-heading: #14261c;
+  --text-body: #5e6e66;
+  --border-subtle: #dce5e0;
+
+  /* Fuentes (Importar de Google Fonts: Volkhov 700 y Poppins 400,500,600,700) */
+  --font-display: 'Volkhov', Georgia, serif;
+  --font-sans: 'Poppins', system-ui, sans-serif;
+
+  /* Radios y Sombras */
+  --radius-card: 24px;
+  --radius-pill: 9999px;
+  --shadow-soft: 0 20px 50px rgba(0, 104, 55, 0.06);
+  --shadow-cta-lime: 0 12px 25px rgba(140, 198, 63, 0.30);
+}
+
+4. PROMPTS SECUENCIALES PARA USAR EN GITHUB COPILOT (CHAT / EDITS)
+--------------------------------------------------------------------------------
+Ejecuta estos prompts paso a paso en Copilot Chat dentro de tu editor (VS Code)
+para que genere y migre cada sección respetando el sistema de diseño:
+
+--- PROMPT 1: CONFIGURACIÓN BASE Y NAVBAR ---
+"Crea la estructura base de la Landing Page de Admisión UNAS usando las variables
+CSS definidas en :root (fuentes Volkhov y Poppins). Implementa un Navbar sticky
+con fondo blanco translúcido (backdrop-blur), el logo oficial de la UNAS a la
+izquierda, enlaces centrados ('Carreras', 'Modalidades', 'Cronograma', 'Beneficios')
+y un botón CTA redondeado a la derecha ('Postula Aquí') en color #8cc63f con
+texto #004d29 en negrita."
+
+--- PROMPT 2: HERO SECTION Y BUSCADOR DE CARRERAS ---
+"Construye el Hero Section en grid de 2 columnas (55% izquierda, 45% derecha).
+A la izquierda coloca:
+1) Badge superior 'ADMISIÓN UNAS' en verde #006837.
+2) Título H1 en fuente Volkhov: 'Tu futuro profesional nace en la Amazonía',
+   destacando 'Amazonía' en color #006837 con un subrayado decorativo curvo en #8cc63f.
+3) Subtítulo descriptivo y dos botones: 'Regístrate Ahora' (fondo #8cc63f) y
+   'Ver Video de Campus' (botón circular dorado #fbb03b con ícono play).
+A la derecha coloca el contenedor para la imagen de estudiantes con máscaras
+circulares orgánicas y 3 íconos flotantes con animación suave.
+Debajo del Hero, agrega una barra de búsqueda flotante tipo píldora con: input
+de texto 'Busca tu carrera profesional...', select de 'Todas las modalidades' y
+botón 'Buscar' en #006837."
+
+--- PROMPT 3: SECCIÓN DE PILARES / CATEGORÍAS ---
+"Crea la sección '¿Por qué elegir la UNAS?' con un grid responsivo de 4 tarjetas
+blancas con bordes redondeados (24px) y sombra difusa (--shadow-soft) al hacer hover.
+Cada tarjeta lleva un ícono SVG de 64x64px, título y descripción breve para:
+1) Investigación en Selva Central
+2) Licenciamiento SUNEDU
+3) Becas y Convenios
+4) Vida Universitaria Activa."
+
+--- PROMPT 4: EXPLORADOR DE CARRERAS ---
+"Implementa la sección 'Nuestras Carreras con propósito' con encabezado a la
+izquierda y botón 'Ver todas las carreras' con borde a la derecha. Crea un grid
+de 4 tarjetas fotográficas (aspect-ratio 16:9, border-radius 16px, overflow hidden)
+con efecto zoom suave en hover y una etiqueta inferior en verde oscuro (#006837)
+con ícono y nombre de carrera: Agronomía, Ingeniería Ambiental, Biología e
+Ingeniería Forestal."
+
+--- PROMPT 5: FLUJO DE INSCRIPCIÓN Y MOCKUP CARNÉ ---
+"Desarrolla la sección 'Proceso de Inscripción: ¿Cómo postular?' sobre un fondo
+suave (#eaf6ee) con bordes redondeados. Muestra los 4 pasos conectados con flechas:
+1) Regístrate en el sistema, 2) Completa tu ficha de inscripción, 3) Realiza tu
+pago, 4) Confirma tu postulación. Añade un componente visual lateral que simule
+una tarjeta de 'Constancia de Inscripción / Carné de Postulante' con código QR,
+datos de ejemplo y foto, usando acentos en #006837 y #fbb03b."
+
+--- PROMPT 6: FOOTER INSTITUCIONAL ---
+"Crea el Footer con fondo verde institucional (#006837) y texto blanco dividido
+en 4 columnas: Logo UNAS blanco y nombre completo, enlaces de redes sociales,
+sellos de acreditación/licenciamiento y botón 'Contáctanos' con borde blanco.
+Incluye barra inferior de copyright."
+
+5. REGLAS DE CALIDAD Y ACCESIBILIDAD PARA VALIDAR CON COPILOT
+--------------------------------------------------------------------------------
+- Responsividad: Asegurar que el grid de 4 columnas pase a 2 en tablet (md) y
+  1 columna en móvil (sm).
+- Contraste: Nunca usar texto blanco sobre el verde lima (#8cc63f); usar siempre
+  texto oscuro (#004d29 o #14261c) para cumplir con WCAG AA.
+- Rendimiento: Usar atributos loading="lazy" en las imágenes de carreras y
+  formatos WebP/SVG para todos los activos gráficos.
+================================================================================

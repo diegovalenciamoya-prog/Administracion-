@@ -1,0 +1,514 @@
+:root {
+  --unas-green-primary: #006837;
+  --unas-green-dark: #004d29;
+  --unas-lime-accent: #8cc63f;
+  --unas-lime-hover: #7ab332;
+  --unas-gold-accent: #fbb03b;
+  --bg-page: #ffffff;
+  --bg-mint-soft: #eaf6ee;
+  --bg-surface-alt: #f4f7f5;
+  --text-heading: #14261c;
+  --text-body: #5e6e66;
+  --border-subtle: #dce5e0;
+  --shadow-soft: 0 20px 50px rgba(0, 104, 55, .08);
+  --green: var(--unas-green-primary);
+  --green-dark: var(--unas-green-dark);
+  --green-mid: #16834a;
+  --green-soft: var(--bg-mint-soft);
+  --amber: var(--unas-gold-accent);
+  --ink: var(--text-heading);
+  --muted: var(--text-body);
+  --line: var(--border-subtle);
+  --surface: var(--bg-surface-alt);
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  color: var(--text-heading);
+}
+
+h1,
+h2,
+h3,
+.exam-date > strong,
+.biometric-date strong {
+  font-family: "Volkhov", Georgia, serif;
+  letter-spacing: 0;
+}
+
+.site-header {
+  background: rgba(255, 255, 255, .92);
+  backdrop-filter: blur(14px);
+}
+
+.main-nav .nav-cta {
+  background: var(--unas-lime-accent);
+  color: var(--unas-green-dark);
+  border-radius: 9999px;
+  box-shadow: 0 10px 24px rgba(140, 198, 63, .22);
+}
+
+.main-nav .nav-cta:hover {
+  background: var(--unas-lime-hover);
+  color: var(--unas-green-dark);
+}
+
+.hero {
+  padding: 58px 0 66px;
+  background: linear-gradient(112deg, #fff 0%, #f6fbf7 50%, var(--bg-mint-soft) 100%);
+}
+
+.hero-grid {
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: 48px;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.hero-content > .eyebrow {
+  width: fit-content;
+  padding: 8px 14px;
+  border-radius: 9999px;
+  background: var(--unas-lime-accent);
+  color: var(--unas-green-dark);
+  letter-spacing: .04em;
+}
+
+.hero-content > .eyebrow .live-dot {
+  background: var(--unas-green-primary);
+  box-shadow: 0 0 0 4px rgba(0, 104, 55, .12);
+}
+
+.hero h1 {
+  max-width: 620px;
+  margin: 22px 0 18px;
+  color: var(--text-heading);
+  font-family: "Volkhov", Georgia, serif;
+  font-size: clamp(42px, 3.8rem, 60px);
+  line-height: 1.14;
+  letter-spacing: 0;
+}
+
+.hero h1 em {
+  display: inline;
+  color: var(--unas-green-primary);
+  font-style: normal;
+  background: linear-gradient(transparent 83%, var(--unas-lime-accent) 83%);
+}
+
+.hero-content > p {
+  max-width: 520px;
+  color: var(--text-body);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.hero-actions .btn {
+  min-height: 48px;
+  border-radius: 9999px;
+}
+
+.btn-primary {
+  background: var(--unas-lime-accent);
+  color: var(--unas-green-dark);
+  box-shadow: 0 12px 25px rgba(140, 198, 63, .28);
+}
+
+.btn-primary:hover {
+  background: var(--unas-lime-hover);
+  color: var(--unas-green-dark);
+}
+
+.btn-outline {
+  border-color: var(--unas-green-primary);
+  color: var(--unas-green-primary);
+}
+
+.hero-visual {
+  position: relative;
+  min-width: 0;
+  min-height: 500px;
+}
+
+.hero-photo {
+  position: absolute;
+  inset: 0 0 22px 18px;
+  overflow: hidden;
+  border-radius: 46% 46% 18px 18px;
+  background-color: #dcefe1;
+  background-image: url("../imagen/Admisiones%20UNAS_%20Construye%20tu%20futuro.png");
+  background-repeat: no-repeat;
+  background-position: right 6%;
+  background-size: 230% auto;
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-visual .exam-card {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  bottom: 0;
+  width: min(390px, 88%);
+  max-width: none;
+  padding: 22px 24px;
+  border: 1px solid rgba(220, 229, 224, .9);
+  border-top: 4px solid var(--unas-lime-accent);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .96);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(14px);
+}
+
+.hero-visual .exam-date > strong {
+  color: var(--unas-green-primary);
+}
+
+.hero-visual .pill {
+  background: var(--bg-mint-soft);
+  color: var(--unas-green-primary);
+}
+
+.steps-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+#proceso .steps-grid {
+  gap: 0;
+  padding: 22px 14px;
+  border-radius: 24px;
+  background: var(--bg-mint-soft);
+}
+
+#proceso .step-card {
+  min-width: 0;
+  min-height: 210px;
+  padding: 15px 16px;
+  border: 0;
+  border-radius: 16px;
+  background: transparent;
+}
+
+#proceso .step-number {
+  position: static;
+  display: grid;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 12px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--unas-green-dark);
+  color: #fff;
+}
+
+#proceso .step-icon {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(0, 104, 55, .1);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--unas-green-primary);
+}
+
+#proceso .step-card h3 {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+#proceso .step-card p {
+  font-size: 12px;
+}
+
+#proceso .step-card > a {
+  color: var(--unas-green-primary);
+  font-size: 12px;
+}
+
+.career-heading {
+  display: flex;
+  max-width: none;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  text-align: left;
+}
+
+.career-heading-copy {
+  max-width: 760px;
+}
+
+.career-heading h2 {
+  margin-bottom: 8px;
+}
+
+.career-meta {
+  margin-top: 10px !important;
+  font-size: 12px !important;
+}
+
+.career-meta strong {
+  color: var(--unas-green-primary);
+}
+
+.career-all {
+  flex: 0 0 auto;
+  margin-bottom: 4px;
+}
+
+#carreras .career-tools {
+  justify-content: flex-end;
+}
+
+#carreras .table-wrap {
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+#carreras .career-table th {
+  background: var(--bg-mint-soft);
+  color: var(--unas-green-dark);
+}
+
+.site-footer {
+  background: var(--unas-green-primary);
+}
+
+.contact-list a {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+  transition: color .2s, text-decoration-color .2s;
+}
+
+.contact-list a:hover,
+.contact-list a:focus-visible {
+  color: var(--green);
+  text-decoration-color: currentColor;
+}
+
+.main-nav a[aria-current="location"] {
+  color: var(--green);
+}
+
+.campaign-banner {
+  padding: 28px 0;
+  background: var(--green-dark);
+  border-top: 5px solid var(--amber);
+  border-bottom: 5px solid var(--amber);
+  display: flex;
+  justify-content: center;
+}
+
+.campaign-banner img {
+  display: block;
+  width: min(100%, 900px);
+  max-height: none;
+  height: auto;
+  object-fit: contain;
+}
+
+.requirements-grid {
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr) minmax(180px, .55fr);
+  gap: 34px;
+}
+
+.requirements-mascot {
+  width: min(100%, 220px);
+  aspect-ratio: 1;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  place-items: center;
+}
+
+.requirements-mascot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.biometric-box {
+  grid-template-columns: minmax(0, 1fr) 170px;
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    width: 100%;
+    max-width: 680px;
+    min-height: 450px;
+    margin-inline: auto;
+  }
+
+  .hero-visual .exam-card {
+    width: min(390px, 92%);
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #proceso .steps-grid {
+    gap: 8px;
+    padding: 16px;
+  }
+
+  .requirements-grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  }
+
+  .requirements-mascot {
+    grid-column: 1 / -1;
+    width: 180px;
+  }
+
+  .biometric-box {
+    grid-template-columns: minmax(0, 1fr) 150px;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero {
+    padding: 50px 0 46px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero-visual {
+    min-height: 410px;
+  }
+
+  .hero-photo {
+    inset: 0 0 14px 14px;
+  }
+
+  .hero-visual .exam-card {
+    width: min(390px, 95%);
+    padding: 18px 20px;
+  }
+
+  #proceso .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 12px;
+  }
+
+  #proceso .step-card {
+    min-height: 0;
+    padding: 18px 14px;
+  }
+
+  .career-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .career-heading .career-all {
+    margin-bottom: 0;
+  }
+
+  .campaign-banner {
+    padding: 14px 0;
+  }
+
+  .requirements-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .requirements-mascot {
+    grid-column: 1;
+    width: 150px;
+  }
+
+  .biometric-box {
+    grid-template-columns: 1fr;
+  }
+
+  .biometric-date {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 390px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .site-header {
+    transition: transform .28s ease;
+  }
+
+  .site-header.is-away {
+    transform: translateY(-100%);
+  }
+
+  .hero-content > .eyebrow,
+  .hero-content > h1,
+  .hero-content > p,
+  .hero-content > .hero-actions,
+  .hero-content > .hero-note,
+  .exam-card {
+    animation: hero-arrive .65s both;
+  }
+
+  .hero-content > h1 { animation-delay: 70ms; }
+  .hero-content > p { animation-delay: 130ms; }
+  .hero-content > .hero-actions { animation-delay: 190ms; }
+  .hero-content > .hero-note { animation-delay: 250ms; }
+  .exam-card { animation-delay: 160ms; }
+
+  .step-card {
+    transition: transform .24s ease, box-shadow .24s ease;
+  }
+
+  .motion-enabled .reveal {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+    transition: opacity .55s ease, transform .55s ease;
+  }
+
+  .motion-enabled .reveal.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .steps-grid .step-card:nth-child(2) { transition-delay: 45ms; }
+  .steps-grid .step-card:nth-child(3) { transition-delay: 90ms; }
+  .steps-grid .step-card:nth-child(4) { transition-delay: 135ms; }
+  .steps-grid .step-card:nth-child(5) { transition-delay: 180ms; }
+
+  @keyframes hero-arrive {
+    from { opacity: 0; transform: translate3d(0, 14px, 0); }
+    to { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .step-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(8, 61, 43, .12);
+  }
+}
+
+@media (max-width: 680px) {
+  .site-header.is-away {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
